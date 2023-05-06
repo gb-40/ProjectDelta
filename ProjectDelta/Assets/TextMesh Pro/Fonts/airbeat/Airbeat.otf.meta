@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: a6dfbd4c30417704d8ed6df7d75efc7a
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Airbeat
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: b37da0961fc5e16478461d584b22fae3, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
