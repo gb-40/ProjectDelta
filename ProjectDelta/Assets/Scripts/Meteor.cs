@@ -6,7 +6,7 @@ public class Meteor : MonoBehaviour
 {
     public float range = 45f; 
     public float speed = 1f; 
-    public int healh = 3;
+    //public int healh = 3;
     private Vector2 targetPosition;  
     
     // Start is called before the first frame update
@@ -27,15 +27,8 @@ public class Meteor : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("bullet"))
-        {
-            healh --;
 
-            if (healh <= 0)
-            {
-                Destroy(this.gameObject);
-            }
-        }
+    
 
         if(other.gameObject.CompareTag("meteor"))
         {

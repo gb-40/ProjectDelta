@@ -15,9 +15,9 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision) 
     {
-        Debug.Log("collision with " + collision.gameObject.tag);
+        //Debug.Log("collision with " + collision.gameObject.tag);
 
-        if(collision.gameObject.tag == "Enemy")
+        if(collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "meteor")
         {
             var healthComponent = collision.gameObject.GetComponent<Health>();
             if(healthComponent != null) 
@@ -31,12 +31,12 @@ public class Bullet : MonoBehaviour
                 else
                 {
                     healthComponent.takeDamage(1);
-                    Debug.Log("hit");
+                  //  Debug.Log("hit");
                     Destroy(gameObject);
                 }
             }
         }
-
+    
         // GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
         // Destroy(effect, 5f);

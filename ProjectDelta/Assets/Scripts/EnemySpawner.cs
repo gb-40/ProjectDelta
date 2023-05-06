@@ -57,7 +57,7 @@ public class EnemySpawner : MonoBehaviour
         Instantiate(randomEnemy.Prefab, spawnPosition, Quaternion.identity, transform);
 
         // This line is not required (debug):
-        Debug.Log("<color=" + randomEnemy.Name + ">●</color> Chance: <b>" + randomEnemy.Chance + "</b>%");
+       // Debug.Log("<color=" + randomEnemy.Name + ">●</color> Chance: <b>" + randomEnemy.Chance + "</b>%");
     }
 
    private int GetRandomEnemyIndex () {
