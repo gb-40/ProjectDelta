@@ -189,7 +189,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &76716314
 GameObject:
@@ -312,7 +312,7 @@ GameObject:
   m_Component:
   - component: {fileID: 672948010}
   m_Layer: 0
-  m_Name: 'Recovery GameObject for Transform (ID in file: 672948010)'
+  m_Name: PlayerFirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -569,7 +569,7 @@ Transform:
   - {fileID: 665009225}
   - {fileID: 1481911755}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &474110016
 GameObject:
@@ -606,12 +606,12 @@ MonoBehaviour:
     Chance: 100
     _weight: 0
   - Name: 2
-    Prefab: {fileID: 1171588077305679691, guid: 7ef029caa1d4a434995bcf95ec93c919, type: 3}
-    Chance: 0
+    Prefab: {fileID: 3633743216854783872, guid: 7ef029caa1d4a434995bcf95ec93c919, type: 3}
+    Chance: 10
     _weight: 0
   - Name: 3
-    Prefab: {fileID: 7006563227079073389, guid: 73f8884deda774945961e31cfee3a379, type: 3}
-    Chance: 0
+    Prefab: {fileID: 5118321525694913122, guid: 73f8884deda774945961e31cfee3a379, type: 3}
+    Chance: 50
     _weight: 0
   enemyCount: 10
 --- !u!4 &474110018
@@ -627,7 +627,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -1014,7 +1014,7 @@ Transform:
   m_Children:
   - {fileID: 2017165575}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &672948010
 Transform:
@@ -1284,37 +1284,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!1 &1145657638
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1145657639}
-  m_Layer: 7
-  m_Name: FirePoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1145657639
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1145657638}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1160268718
 GameObject:
   m_ObjectHideFlags: 0
@@ -1405,7 +1374,7 @@ GameObject:
   - component: {fileID: 1481911756}
   m_Layer: 8
   m_Name: wallTest
-  m_TagString: Untagged
+  m_TagString: walls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1537,6 +1506,7 @@ GameObject:
   - component: {fileID: 1519149142}
   - component: {fileID: 1519149141}
   - component: {fileID: 1519149140}
+  - component: {fileID: 1519149145}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -1629,8 +1599,22 @@ Transform:
   - {fileID: 331768673}
   - {fileID: 672948010}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1519149145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519149139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b21b68df7e100194693280dd1256dba2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 500
+  currentHealth: 0
 --- !u!1 &1541655114
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,7 +1646,7 @@ Transform:
   - {fileID: 659944425}
   - {fileID: 76716315}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1593935672
 GameObject:
@@ -1699,12 +1683,12 @@ MonoBehaviour:
     Chance: 100
     _weight: 0
   - Name: 2
-    Prefab: {fileID: 1171588077305679691, guid: 7ef029caa1d4a434995bcf95ec93c919, type: 3}
-    Chance: 0
+    Prefab: {fileID: 3633743216854783872, guid: 7ef029caa1d4a434995bcf95ec93c919, type: 3}
+    Chance: 10
     _weight: 0
   - Name: 3
-    Prefab: {fileID: 7006563227079073389, guid: 73f8884deda774945961e31cfee3a379, type: 3}
-    Chance: 0
+    Prefab: {fileID: 5118321525694913122, guid: 73f8884deda774945961e31cfee3a379, type: 3}
+    Chance: 50
     _weight: 0
   enemyCount: 10
 --- !u!4 &1593935674
@@ -1720,7 +1704,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1621931864
 GameObject:
@@ -1758,7 +1742,7 @@ MonoBehaviour:
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
     cacheStartup: 0
-  showNavGraphs: 1
+  showNavGraphs: 0
   showUnwalkableNodes: 1
   debugMode: 0
   debugFloor: 0
@@ -1839,7 +1823,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1625317540
 GameObject:
@@ -1871,7 +1855,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1625317542
 MonoBehaviour:
@@ -1972,7 +1956,7 @@ Transform:
   m_Children:
   - {fileID: 929144198}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2017165574
 GameObject:
