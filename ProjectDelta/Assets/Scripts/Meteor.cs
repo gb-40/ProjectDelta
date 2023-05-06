@@ -8,6 +8,7 @@ public class Meteor : MonoBehaviour
     public float speed = 1f; 
     public int healh = 3;
     private Vector2 targetPosition;  
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,15 +19,15 @@ public class Meteor : MonoBehaviour
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-        if (Vector2.Distance(transform.position, targetPosition) < 0.1f)
+        if (Vector2.Distance(transform.position, targetPosition) < 0.1f )
         {
             targetPosition = GetRandomPosition();
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.CompareTag("Bullet"))
+        if(other.gameObject.CompareTag("bullet"))
         {
             healh --;
 
@@ -35,6 +36,17 @@ public class Meteor : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
+
+        if(other.gameObject.CompareTag("meteor"))
+        {
+        
+            targetPosition = GetRandomPosition();
+        }
+         if(other.gameObject.CompareTag("walls"))
+         {
+        
+            targetPosition = GetRandomPosition();
+         }
     }
 
     Vector2 GetRandomPosition()
@@ -42,6 +54,6 @@ public class Meteor : MonoBehaviour
         float x = Random.Range(-range, range);
         float y = Random.Range(-range, range); 
 
-        return (Vector2)transform.position + new Vector2(x,y);
+        return new Vector2(x,y);
     }
 }
