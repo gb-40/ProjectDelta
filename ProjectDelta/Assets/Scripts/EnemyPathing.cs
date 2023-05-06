@@ -10,6 +10,10 @@ public class EnemyPathing : MonoBehaviour
     public float desiredDistance = 5f;
     public float repulsionForce = 10f;
 
+    private Vector2 randomDirection;
+    private float changeDirectionInterval = 1f;
+    private float changeDirectionTimer;
+
     private void Start()
     {
         target = playerMovement.Instance;
@@ -17,6 +21,8 @@ public class EnemyPathing : MonoBehaviour
         {
             Debug.LogError("Player target not found!");
         }
+
+        changeDirectionTimer = changeDirectionInterval;
     }
 
     private void Update()
@@ -48,18 +54,38 @@ public class EnemyPathing : MonoBehaviour
             // Normalize moveDirection after adding avoidance vectors
             moveDirection.Normalize();
 
+            // Rotate towards the target
+            if (direction != Vector2.zero)
+            {
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+                transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            }
+
             // Move towards or away from the target based on distance
             float distanceToTarget = direction.magnitude;
             if (distanceToTarget > desiredDistance)
             {
                 // Move towards the target if the distance is greater than desiredDistance
-                transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
+                transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.World);
             }
             else if (distanceToTarget < desiredDistance)
             {
                 // Move away from the target if the distance is smaller than desiredDistance
-                transform.Translate(-moveDirection * moveSpeed * Time.deltaTime);
+                transform.Translate(-moveDirection * moveSpeed * Time.deltaTime, Space.World);
             }
+
+            // Change direction randomly
+            changeDirectionTimer -= Time.deltaTime;
+            if (changeDirectionTimer <= 0)
+            {
+                randomDirection = Random.insideUnitCircle.normalized;
+                changeDirectionTimer = changeDirectionInterval;
+            }
+
+            // Add random movement to the enemy
+            moveDirection += randomDirection;
+            moveDirection.Normalize();
+            transform.Translate(moveDirection * moveSpeed * Time.deltaTime, Space.World);
         }
     }
 }

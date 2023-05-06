@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
     {
        // Debug.Log("collision with " + collision.gameObject.tag);
 
-        if(collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "meteor")
+        if(collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "meteor" || collision.gameObject.tag == "Player")
         {
             //Debug.Log("collision collision");
             var healthComponent = collision.gameObject.GetComponent<Health>();
@@ -26,13 +26,13 @@ public class Bullet : MonoBehaviour
                 if(gameObject.tag == "pulseShot")
                 {
                     healthComponent.takeDamage(3);
-                    //Debug.Log("pulse hit");
+                    Debug.Log("pulse hit");
                     Destroy(gameObject);
                 }
                 else
                 {
                     healthComponent.takeDamage(1);
-                  //  Debug.Log("hit");
+                    Debug.Log("hit");
                     Destroy(gameObject);
                 }
             }
