@@ -5,48 +5,40 @@ using UnityEngine;
 public class Meteor : MonoBehaviour
 {
     public float range = 45f; 
-    public float speed = 1f; 
-    //public int healh = 3;
-    private Vector2 targetPosition;  
-    
+    public float speedX = 3f; 
+    private float speedY = 3f; 
+   
+   private float rotateSpeed = 80f;
+  
+ 
     // Start is called before the first frame update
     void Start()
     {
-        targetPosition = GetRandomPosition(); 
+       speedY= Random.Range(-2f, 2f); 
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-        if (Vector2.Distance(transform.position, targetPosition) < 0.1f )
-        {
-            targetPosition = GetRandomPosition();
-        }
+     
+       transform.position += new Vector3(speedX * Time.deltaTime, speedY * Time.deltaTime, 0f);
+       transform.Rotate(Vector3.forward,Time.deltaTime * rotateSpeed);
+      
     }
+        
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-
-    
-
-        if(other.gameObject.CompareTag("meteor"))
+      
         {
-        
-            targetPosition = GetRandomPosition();
+        if(other.gameObject.CompareTag("meteor") ||other.gameObject.CompareTag("walls") )
+        {
+            speedX = -speedX;
+            speedY= -speedY;
+
+            rotateSpeed = Random.Range(-100f,80f);
         }
-         if(other.gameObject.CompareTag("walls"))
-         {
-        
-            targetPosition = GetRandomPosition();
-         }
-    }
-
-    Vector2 GetRandomPosition()
-    {
-        float x = Random.Range(-range, range);
-        float y = Random.Range(-range, range); 
-
-        return new Vector2(x,y);
+        }
+    
     }
 }
