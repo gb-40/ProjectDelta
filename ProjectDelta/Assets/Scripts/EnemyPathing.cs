@@ -7,7 +7,8 @@ public class EnemyPathing : MonoBehaviour
     private Transform target;
     public float moveSpeed = 5f;
     public float avoidanceDistance = 5f;
-    public float desiredDistance = 500f;                                // FIX THIS
+    public float desiredDistance = 5f;
+    public float repulsionForce = 10f;
 
     private void Start()
     {
@@ -25,25 +26,30 @@ public class EnemyPathing : MonoBehaviour
             Vector2 direction = target.position - transform.position;
             Vector2 moveDirection = direction.normalized;
 
-            // Check for collision using Raycast
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, moveDirection, avoidanceDistance);
-            if (hit.collider != null)
+            // Avoid colliding with other enemies
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, avoidanceDistance);
+            foreach (Collider2D collider in colliders)
             {
-                // Calculate a new direction perpendicular to the obstacle
-                Vector2 avoidDirection = Vector2.Perpendicular(moveDirection);
+                if (collider != null && collider.CompareTag("Enemy") && collider != this.GetComponent<Collider2D>())
+                {
+                    Vector2 avoidDirection = (transform.position - collider.transform.position).normalized;
+                    moveDirection += avoidDirection;
 
-                // Move in the avoidDirection instead of the original moveDirection
-                transform.Translate(avoidDirection * moveSpeed * Time.deltaTime);
-            }
-            else
-            {
-                // No collision, move towards the target normally
-                transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
+                    // Apply repulsion force to nearby enemies
+                    float distance = Vector2.Distance(transform.position, collider.transform.position);
+                    if (distance < desiredDistance)
+                    {
+                        Vector2 repulsionVector = (transform.position - collider.transform.position).normalized;
+                        moveDirection += repulsionVector * repulsionForce;
+                    }
+                }
             }
 
-            // Buffer between enemy and player
+            // Normalize moveDirection after adding avoidance vectors
+            moveDirection.Normalize();
+
+            // Move towards or away from the target based on distance
             float distanceToTarget = direction.magnitude;
-
             if (distanceToTarget > desiredDistance)
             {
                 // Move towards the target if the distance is greater than desiredDistance

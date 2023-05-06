@@ -75,13 +75,13 @@ public class Shooting : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision) 
     {
-        if(collision.gameObject.tag == "TSpowerup")
+        if(collision.gameObject.name == "TSpowerup")
         {
             canTripleShot = true;
             StartCoroutine(PowerupDuration(canTripleShot, 5f));
             Destroy(collision.gameObject);
         }
-        else if(collision.gameObject.tag == "PSpowerup")
+        else if(collision.gameObject.name == "PSpowerup")
         {
             canPulseShot = true;
             StartCoroutine(PowerupDuration(canPulseShot, 5f));

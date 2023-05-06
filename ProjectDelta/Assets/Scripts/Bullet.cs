@@ -15,17 +15,18 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision) 
     {
-        //Debug.Log("collision with " + collision.gameObject.tag);
+       // Debug.Log("collision with " + collision.gameObject.tag);
 
         if(collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "meteor")
         {
+            //Debug.Log("collision collision");
             var healthComponent = collision.gameObject.GetComponent<Health>();
             if(healthComponent != null) 
             {
                 if(gameObject.tag == "pulseShot")
                 {
                     healthComponent.takeDamage(3);
-                    Debug.Log("hit");
+                    //Debug.Log("pulse hit");
                     Destroy(gameObject);
                 }
                 else

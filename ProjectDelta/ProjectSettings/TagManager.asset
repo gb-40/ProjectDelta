@@ -5,11 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - TSpowerup
-  - PSpowerup
   - walls
   - meteor
   - pulseShot
+  - bullet
   layers:
   - Default
   - TransparentFX
@@ -19,7 +18,7 @@ TagManager:
   - UI
   - Bullet
   - Player
-  - 
+  - Walls
   - 
   - 
   - 

@@ -161,5 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b076f83ac511134ab0fd35e44ac068a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   moveSpeed: 3
+  avoidanceDistance: 5
+  desiredDistance: 10
+  repulsionForce: 20
