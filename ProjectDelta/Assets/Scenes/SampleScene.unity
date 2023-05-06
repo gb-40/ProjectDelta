@@ -947,11 +947,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-<<<<<<< HEAD
---- !u!1 &672948009
-=======
 --- !u!1 &670503235
->>>>>>> 35397c64f7c5d783b9f05cb431e93c161500fde9
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -959,24 +955,16 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD
-  - component: {fileID: 672948010}
-  m_Layer: 7
-  m_Name: FirePoint
-=======
   - component: {fileID: 670503237}
   - component: {fileID: 670503236}
   m_Layer: 0
   m_Name: LevelChanger
->>>>>>> 35397c64f7c5d783b9f05cb431e93c161500fde9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-<<<<<<< HEAD
 --- !u!4 &672948010
-=======
 --- !u!95 &670503236
 Animator:
   serializedVersion: 5
@@ -998,22 +986,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
 --- !u!4 &670503237
->>>>>>> 35397c64f7c5d783b9f05cb431e93c161500fde9
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-  m_GameObject: {fileID: 672948009}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1519149144}
-  m_RootOrder: 1
-=======
   m_GameObject: {fileID: 670503235}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.9581423, y: 2.2091513, z: -0.35923356}
@@ -1023,7 +1000,6 @@ Transform:
   - {fileID: 2017165575}
   m_Father: {fileID: 0}
   m_RootOrder: 10
->>>>>>> 35397c64f7c5d783b9f05cb431e93c161500fde9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &707885435
 GameObject:
@@ -1278,8 +1254,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
-<<<<<<< HEAD
-=======
 --- !u!1 &1145657638
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,7 +1361,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1160268718}
   m_CullTransparentMesh: 1
->>>>>>> 35397c64f7c5d783b9f05cb431e93c161500fde9
 --- !u!1 &1481911753
 GameObject:
   m_ObjectHideFlags: 0
