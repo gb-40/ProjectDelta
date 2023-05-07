@@ -751,7 +751,7 @@ MonoBehaviour:
   enemies:
   - Name: 1
     Prefab: {fileID: 6044507368546972595, guid: df52d935f090ba043bceee4b391466a4, type: 3}
-    Chance: 100
+    Chance: 80
     _weight: 0
   - Name: 2
     Prefab: {fileID: 3633743216854783872, guid: 7ef029caa1d4a434995bcf95ec93c919, type: 3}
@@ -761,7 +761,7 @@ MonoBehaviour:
     Prefab: {fileID: 5118321525694913122, guid: 73f8884deda774945961e31cfee3a379, type: 3}
     Chance: 50
     _weight: 0
-  enemyCount: 10
+  enemyCount: 5
 --- !u!4 &474110018
 Transform:
   m_ObjectHideFlags: 0
@@ -831,7 +831,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 20
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1411,6 +1411,64 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!1 &1019553826
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1019553828}
+  - component: {fileID: 1019553827}
+  m_Layer: 0
+  m_Name: EnemySpawner (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1019553827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019553826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7f78176696cc4146b46b84b44da0e9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies:
+  - Name: 1
+    Prefab: {fileID: 6044507368546972595, guid: df52d935f090ba043bceee4b391466a4, type: 3}
+    Chance: 80
+    _weight: 0
+  - Name: 2
+    Prefab: {fileID: 3633743216854783872, guid: 7ef029caa1d4a434995bcf95ec93c919, type: 3}
+    Chance: 10
+    _weight: 0
+  - Name: 3
+    Prefab: {fileID: 5118321525694913122, guid: 73f8884deda774945961e31cfee3a379, type: 3}
+    Chance: 50
+    _weight: 0
+  enemyCount: 5
+--- !u!4 &1019553828
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019553826}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 25, y: -35, z: 0.13037857}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1160268718
 GameObject:
   m_ObjectHideFlags: 0
@@ -1701,6 +1759,64 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: New Text
+--- !u!1 &1475811104
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1475811106}
+  - component: {fileID: 1475811105}
+  m_Layer: 0
+  m_Name: EnemySpawner (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1475811105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475811104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7f78176696cc4146b46b84b44da0e9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies:
+  - Name: 1
+    Prefab: {fileID: 6044507368546972595, guid: df52d935f090ba043bceee4b391466a4, type: 3}
+    Chance: 80
+    _weight: 0
+  - Name: 2
+    Prefab: {fileID: 3633743216854783872, guid: 7ef029caa1d4a434995bcf95ec93c919, type: 3}
+    Chance: 10
+    _weight: 0
+  - Name: 3
+    Prefab: {fileID: 5118321525694913122, guid: 73f8884deda774945961e31cfee3a379, type: 3}
+    Chance: 50
+    _weight: 0
+  enemyCount: 5
+--- !u!4 &1475811106
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475811104}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -25, y: -35, z: 0.13037857}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1519149139
 GameObject:
   m_ObjectHideFlags: 0
@@ -1929,7 +2045,7 @@ MonoBehaviour:
   enemies:
   - Name: 1
     Prefab: {fileID: 6044507368546972595, guid: df52d935f090ba043bceee4b391466a4, type: 3}
-    Chance: 100
+    Chance: 80
     _weight: 0
   - Name: 2
     Prefab: {fileID: 3633743216854783872, guid: 7ef029caa1d4a434995bcf95ec93c919, type: 3}
@@ -1939,7 +2055,7 @@ MonoBehaviour:
     Prefab: {fileID: 5118321525694913122, guid: 73f8884deda774945961e31cfee3a379, type: 3}
     Chance: 50
     _weight: 0
-  enemyCount: 10
+  enemyCount: 5
 --- !u!4 &1593935674
 Transform:
   m_ObjectHideFlags: 0
@@ -2086,6 +2202,7 @@ GameObject:
   - component: {fileID: 1625317542}
   - component: {fileID: 1625317543}
   - component: {fileID: 1625317544}
+  - component: {fileID: 1625317545}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2163,6 +2280,20 @@ MonoBehaviour:
   timerText: {fileID: 1244171046}
   timesUpPopup: {fileID: 15827218}
   MenuButton: {fileID: 1177064641}
+--- !u!114 &1625317545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625317540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b45c81e33678074da40eb5d5b437018, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpawner: {fileID: 474110017}
+  enemySpawner1: {fileID: 1593935673}
 --- !u!1 &1952325163
 GameObject:
   m_ObjectHideFlags: 0
