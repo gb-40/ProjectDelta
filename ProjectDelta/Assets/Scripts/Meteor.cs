@@ -7,12 +7,14 @@ public class Meteor : MonoBehaviour
     public float range = 45f; 
     public float speedX = 3f; 
     private float speedY = 3f; 
+    public float metorDamage= 2f;
    
    private float rotateSpeed = 80f;
    private Health health;
    private Animator anim; 
    private Collider2D col;
    public GameObject smoke;
+   private LevelScript levelScript;
   
  
     // Start is called before the first frame update
@@ -49,6 +51,12 @@ public class Meteor : MonoBehaviour
 
             rotateSpeed = Random.Range(-100f,80f);
         }
+        }
+
+        if(other.gameObject.CompareTag("Player"))
+        {
+            levelScript = GameObject.FindObjectOfType<LevelScript>();
+            levelScript.SubtractTime(metorDamage);
         }
     
     }
