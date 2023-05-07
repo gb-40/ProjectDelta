@@ -29,6 +29,7 @@ private List<GameObject> meteors = new List<GameObject>();
             Vector2 pos = new Vector3 (Random.Range(-range,range), Random.Range(-range,range),0);
             //pick size
             float size = Random.Range (minSize, maxSize); 
+           // Debug.Log(size);
             //spawn metor
             GameObject meteor = Instantiate(meteorPrefab, pos, Quaternion.identity);
             //set size

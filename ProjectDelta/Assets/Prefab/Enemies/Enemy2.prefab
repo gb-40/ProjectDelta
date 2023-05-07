@@ -19,7 +19,6 @@ GameObject:
   - component: {fileID: 3558600949321529363}
   - component: {fileID: 1645038089489132835}
   - component: {fileID: 3779978995017299482}
-  - component: {fileID: -3553620195784040832}
   m_Layer: 12
   m_Name: Enemy2
   m_TagString: Enemy
@@ -168,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13efb279fa03a6645b11bba76652b9b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyExplosion: {fileID: 8307572697076201809, guid: e7453fa009e7e7641b9d09f479d908bc, type: 3}
 --- !u!114 &3633743216854783879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,26 +285,6 @@ MonoBehaviour:
   bulletForce: 20
   startInterval: 1
   shotInterval: 1
---- !u!95 &-3553620195784040832
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3633743216854783872}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e63b46d44d4bb7a4e8bf3be61eeadc0f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &7932812679333693530
 GameObject:
   m_ObjectHideFlags: 0

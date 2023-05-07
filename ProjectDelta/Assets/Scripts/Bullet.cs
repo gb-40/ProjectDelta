@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public GameObject explosion;
 
-    // public GameObject hitEffect;
-
+    private void Start()
+    {
+    
+    }
     private void OnBecameInvisible()
     {
         // Destroy the game object when it goes off screen
+
         Destroy(gameObject);
+       
     }
 
     void OnCollisionEnter2D(Collision2D collision) 
@@ -28,17 +33,19 @@ public class Bullet : MonoBehaviour
                     healthComponent.takeDamage(3);
                     //Debug.Log("pulse hit");
                     Destroy(gameObject);
+                    Instantiate(explosion,gameObject.transform.position,Quaternion.identity);
                 }
                 else
                 {
                     healthComponent.takeDamage(1);
                     //Debug.Log("hit");
                     Destroy(gameObject);
+                    Instantiate(explosion,gameObject.transform.position,Quaternion.identity);
                 }
             }
         }
     
-        // GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+        // GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);         
         Destroy(gameObject);
         // Destroy(effect, 5f);
     }

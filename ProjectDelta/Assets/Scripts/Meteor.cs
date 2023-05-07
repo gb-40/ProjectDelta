@@ -10,7 +10,8 @@ public class Meteor : MonoBehaviour
    
    private float rotateSpeed = 80f;
    private Health health;
-   private Animator anim; 
+   private Animator explosionAnim; 
+
    private Collider2D col;
   
  
@@ -19,8 +20,10 @@ public class Meteor : MonoBehaviour
     {
        speedY= Random.Range(-2f, 2f); 
        health = GetComponent<Health>();
-       anim = GetComponent<Animator>(); 
+       Transform childTransform = transform.Find("Explosion"); 
+       explosionAnim = childTransform.GetComponent<Animator>();
        col = GetComponent<Collider2D>();
+       
     }
 
     // Update is called once per frame
@@ -60,7 +63,7 @@ public class Meteor : MonoBehaviour
 
         //play animation 
         
-       anim.SetTrigger("destroy");
+       explosionAnim.SetTrigger("destroy");
        speedX = 0f; speedY = 0f; 
         col.enabled = false; 
 

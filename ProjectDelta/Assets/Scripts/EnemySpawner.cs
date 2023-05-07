@@ -21,6 +21,7 @@ public class EnemySpawner : MonoBehaviour
 
    private double accumulatedWeights ;
    private System.Random rand = new System.Random () ;
+   private int spawnCount = 0;
 
 
    private void Awake () {
@@ -77,4 +78,25 @@ public class EnemySpawner : MonoBehaviour
          enemy._weight = accumulatedWeights ;
       }
    }
+
+   public void SpawnMoreEnemies()
+    {
+        if (spawnCount < 4)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                SpawnRandomEnemy();
+            }
+
+            spawnCount++;
+
+            foreach (Enemy enemy in enemies)
+            {
+                  enemy.Chance += 5f;
+            }
+
+            // Recalculate the weights
+            CalculateWeights();
+        }
+    }
 }
