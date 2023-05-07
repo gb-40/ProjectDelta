@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1313310447270745392}
   - component: {fileID: 6176779941847185993}
   - component: {fileID: 4095318611474788353}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: bigEnemyShot
   m_TagString: pulseShot
   m_Icon: {fileID: 0}
