@@ -3,22 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 
 public class LevelScript : MonoBehaviour
 {
-    public float timerDuration = 30f;
-    public Text timerText;
+    public float startTime = 20f;
+    public float maxTime = 100f; 
+     public TMP_Text textMesh;
     public GameObject timesUpPopup;
     private float currentTime;
     private bool isPaused = false;
     public Button MenuButton;
+    public Image TimeBarFill; 
 
     // Start is called before the first frame update
     void Start()
     {
 
-        currentTime = timerDuration;
+        currentTime = startTime;
         UpdateTimerText();
         StartCoroutine(StartTimer());
 
@@ -28,6 +31,11 @@ public class LevelScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(currentTime > maxTime)
+        {
+        currentTime = maxTime;
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             TogglePause();
@@ -38,6 +46,7 @@ public class LevelScript : MonoBehaviour
     {
         while (currentTime > 0)
         {
+            TimeBarFill.fillAmount = currentTime/100f;
             if (!isPaused)
             {
                 currentTime -= Time.deltaTime;
@@ -51,9 +60,10 @@ public class LevelScript : MonoBehaviour
 
     void UpdateTimerText()
     {
-        if (timerText != null) 
+        
+        if (textMesh != null) 
         {
-        timerText.text = "Time: " + Mathf.CeilToInt(currentTime).ToString();
+        textMesh.text = Mathf.CeilToInt(currentTime).ToString();
         }
     }
 
