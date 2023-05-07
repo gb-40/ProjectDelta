@@ -10,6 +10,7 @@ TagManager:
   - pulseShot
   - bullet
   - powerup
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -19,13 +20,14 @@ TagManager:
   - UI
   - Bullet
   - Player
-  - Walls
+  - OuterWalls
   - Enviorment
   - post
+  - InnerWalls
   - EnemyBullet
   - Enemy
-  - 
-  - 
+  - Boss
+  - BossBullets
   - 
   - 
   - 
@@ -49,4 +51,7 @@ TagManager:
     locked: 0
   - name: Walls
     uniqueID: 3632115203
+    locked: 0
+  - name: Boss
+    uniqueID: 1744116017
     locked: 0
