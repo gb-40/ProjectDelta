@@ -9,7 +9,7 @@ public class forEnemy : MonoBehaviour
     private Animator anim; 
     private Rigidbody2D rb; 
     private EnemyPathing pathing;
-    
+    private LevelScript levelScript;
 
 
     // Start is called before the first frame update
@@ -20,8 +20,9 @@ void Start()
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         pathing = GetComponent<EnemyPathing>();
-        
+        levelScript = GameObject.FindObjectOfType<LevelScript>();
     }
+    
 
     // Update is called once per frame
     void Update()
@@ -48,6 +49,10 @@ void Start()
 
         // Destroy the game object
         Destroy(gameObject);
+    }
+     private void OnDestroy()
+      {
+        levelScript.AddTime(10f);
     }
 
 

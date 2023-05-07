@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class LevelScript : MonoBehaviour
 {
     public float timerDuration = 30f;
@@ -16,6 +17,7 @@ public class LevelScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         currentTime = timerDuration;
         UpdateTimerText();
         StartCoroutine(StartTimer());
@@ -66,13 +68,14 @@ public class LevelScript : MonoBehaviour
 
     public void GoToMenu()
    {
+        isPaused = false; 
         SceneManager.LoadScene(0); 
-
+       
    }
 
    public void AddTime(float amount)
     {
-        currentTime += amount;
+        currentTime += amount-0.2f;
         UpdateTimerText();
     }
 }

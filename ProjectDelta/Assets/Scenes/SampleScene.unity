@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &15827219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,7 +369,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 500
   m_TargetDisplay: 0
 --- !u!1 &141903104
 GameObject:
@@ -2159,7 +2159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de8468f3007ada84eae2cc680d820843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerDuration: 3
+  timerDuration: 60
   timerText: {fileID: 1244171046}
   timesUpPopup: {fileID: 15827218}
   MenuButton: {fileID: 1177064641}

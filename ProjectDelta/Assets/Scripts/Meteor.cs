@@ -9,12 +9,14 @@ public class Meteor : MonoBehaviour
     private float speedY = 3f; 
    
    private float rotateSpeed = 80f;
+   private Health health;
   
  
     // Start is called before the first frame update
     void Start()
     {
        speedY= Random.Range(-2f, 2f); 
+       health = GetComponent<Health>();
     }
 
     // Update is called once per frame
@@ -23,6 +25,10 @@ public class Meteor : MonoBehaviour
      
        transform.position += new Vector3(speedX * Time.deltaTime, speedY * Time.deltaTime, 0f);
        transform.Rotate(Vector3.forward,Time.deltaTime * rotateSpeed);
+        if (health.currentHealth <= 0)
+        {
+           StartCoroutine(Destroy());
+        }
       
     }
         
@@ -40,6 +46,23 @@ public class Meteor : MonoBehaviour
         }
         }
     
+    }
+     IEnumerator Destroy()
+    {
+        // Do death animation and sound effects
+       // Debug.Log("Enemy has died!");
+       // pathing.enabled = false;
+      
+
+        //play animation 
+       // anim.SetTrigger("dead");
+
+
+        // Wait for the death animation to finish
+        yield return new WaitForSeconds(1f);
+
+        // Destroy the game object
+        Destroy(gameObject);
     }
 }
 
