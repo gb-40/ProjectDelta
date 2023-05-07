@@ -10,6 +10,8 @@ public class Meteor : MonoBehaviour
    
    private float rotateSpeed = 80f;
    private Health health;
+   private Animator anim; 
+   private Collider2D col;
   
  
     // Start is called before the first frame update
@@ -17,6 +19,8 @@ public class Meteor : MonoBehaviour
     {
        speedY= Random.Range(-2f, 2f); 
        health = GetComponent<Health>();
+       anim = GetComponent<Animator>(); 
+       col = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -55,7 +59,10 @@ public class Meteor : MonoBehaviour
       
 
         //play animation 
-       // anim.SetTrigger("dead");
+        
+       anim.SetTrigger("destroy");
+       speedX = 0f; speedY = 0f; 
+        col.enabled = false; 
 
 
         // Wait for the death animation to finish

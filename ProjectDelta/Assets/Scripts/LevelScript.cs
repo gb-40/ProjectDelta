@@ -75,7 +75,7 @@ public class LevelScript : MonoBehaviour
 
    public void AddTime(float amount)
     {
-        currentTime += amount-0.2f;
+        currentTime += amount;
         UpdateTimerText();
     }
 }

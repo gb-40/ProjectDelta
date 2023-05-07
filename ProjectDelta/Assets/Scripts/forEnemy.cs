@@ -8,8 +8,9 @@ public class forEnemy : MonoBehaviour
    // private int maxHealth = 100;  
     private Animator anim; 
     private Rigidbody2D rb; 
-    private EnemyPathing pathing;
+   
     private LevelScript levelScript;
+    private Collider2D col; 
 
 
     // Start is called before the first frame update
@@ -19,8 +20,9 @@ void Start()
         health = GetComponent<Health>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        pathing = GetComponent<EnemyPathing>();
+
         levelScript = GameObject.FindObjectOfType<LevelScript>();
+        col = GetComponent<Collider2D>(); 
     }
     
 
@@ -37,7 +39,9 @@ void Start()
     {
         // Do death animation and sound effects
         Debug.Log("Enemy has died!");
-        pathing.enabled = false;
+       
+        col.enabled = false;
+        rb.isKinematic= true;
       
 
         //play animation 
