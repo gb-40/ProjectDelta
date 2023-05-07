@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cb31851bc518d74f89f30da95131477, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 8215382738694720978, guid: a259dbe5562febc498e8bfe713e93ae6, type: 3}
   BossBasicDMG: 4
   BossSpiralDMG: 2
   PulseShotDMG: 3
