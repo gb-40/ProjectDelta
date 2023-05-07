@@ -51,7 +51,10 @@ public class LevelScript : MonoBehaviour
 
     void UpdateTimerText()
     {
+        if (timerText != null) 
+        {
         timerText.text = "Time: " + Mathf.CeilToInt(currentTime).ToString();
+        }
     }
 
     void TimeUp()
