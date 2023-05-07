@@ -245,6 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 45
   speedX: 3
+  smoke: {fileID: 1937744726238173524, guid: 52b0b4cf24b61ff49928849a85cdc34d, type: 3}
 --- !u!114 &-4329035916517678779
 MonoBehaviour:
   m_ObjectHideFlags: 0

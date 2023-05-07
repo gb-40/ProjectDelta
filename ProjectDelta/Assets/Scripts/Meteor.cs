@@ -10,9 +10,9 @@ public class Meteor : MonoBehaviour
    
    private float rotateSpeed = 80f;
    private Health health;
-   private Animator explosionAnim; 
-
+   private Animator anim; 
    private Collider2D col;
+   public GameObject smoke;
   
  
     // Start is called before the first frame update
@@ -20,10 +20,8 @@ public class Meteor : MonoBehaviour
     {
        speedY= Random.Range(-2f, 2f); 
        health = GetComponent<Health>();
-       Transform childTransform = transform.Find("Explosion"); 
-       explosionAnim = childTransform.GetComponent<Animator>();
+       anim = GetComponent<Animator>(); 
        col = GetComponent<Collider2D>();
-       
     }
 
     // Update is called once per frame
@@ -34,7 +32,7 @@ public class Meteor : MonoBehaviour
        transform.Rotate(Vector3.forward,Time.deltaTime * rotateSpeed);
         if (health.currentHealth <= 0)
         {
-           StartCoroutine(Destroy());
+          Death();
         }
       
     }
@@ -54,22 +52,11 @@ public class Meteor : MonoBehaviour
         }
     
     }
-     IEnumerator Destroy()
+     private void Death()
     {
-        // Do death animation and sound effects
-       // Debug.Log("Enemy has died!");
-       // pathing.enabled = false;
-      
-
-        //play animation 
-        
-       explosionAnim.SetTrigger("destroy");
-       speedX = 0f; speedY = 0f; 
-        col.enabled = false; 
 
 
-        // Wait for the death animation to finish
-        yield return new WaitForSeconds(1f);
+      Instantiate(smoke, transform.position, Quaternion.identity);
 
         // Destroy the game object
         Destroy(gameObject);
