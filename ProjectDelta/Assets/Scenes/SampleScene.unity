@@ -2294,6 +2294,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySpawner: {fileID: 474110017}
   enemySpawner1: {fileID: 1593935673}
+  enemySpawner2: {fileID: 1475811105}
+  enemySpawner3: {fileID: 1019553827}
 --- !u!1 &1952325163
 GameObject:
   m_ObjectHideFlags: 0
