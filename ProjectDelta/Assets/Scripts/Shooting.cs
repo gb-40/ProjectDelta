@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Shooting : MonoBehaviour
 {
     public Transform firePoint;
@@ -75,17 +76,20 @@ public class Shooting : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision) 
     {
-        if(collision.gameObject.name == "TSpowerup")
+        if(!canPulseShot && !canTripleShot)
         {
-            canTripleShot = true;
-            StartCoroutine(PowerupDuration(canTripleShot, 5f));
-            Destroy(collision.gameObject);
-        }
-        else if(collision.gameObject.name == "PSpowerup")
-        {
-            canPulseShot = true;
-            StartCoroutine(PowerupDuration(canPulseShot, 5f));
-            Destroy(collision.gameObject);
+            if(collision.gameObject.name.Contains("TSpowerup"))
+            {
+                canTripleShot = true;
+                StartCoroutine(PowerupDuration(canTripleShot, 5f));
+                Destroy(collision.gameObject);
+            }
+            else if(collision.gameObject.name.Contains("PSpowerup"))
+            {
+                canPulseShot = true;
+                StartCoroutine(PowerupDuration(canPulseShot, 5f));
+                Destroy(collision.gameObject);
+            }
         }
     }
 }

@@ -9,6 +9,7 @@ TagManager:
   - meteor
   - pulseShot
   - bullet
+  - powerup
   layers:
   - Default
   - TransparentFX
@@ -23,8 +24,6 @@ TagManager:
   - 
   - EnemyBullet
   - Enemy
-  - 
-  - 
   - 
   - 
   - 
