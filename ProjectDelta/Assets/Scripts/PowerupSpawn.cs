@@ -21,7 +21,7 @@ public class PowerupSpawn : MonoBehaviour
         int tspowerupCount = Random.Range(minSpawnCount, maxSpawnCount + 1);
         int pspowerupCount = Random.Range(minSpawnCount, maxSpawnCount + 1);
 
-        Debug.Log("TS: " + tspowerupCount + " PS: " + pspowerupCount);
+       // Debug.Log("TS: " + tspowerupCount + " PS: " + pspowerupCount);
 
         for (int i = 0; i < tspowerupCount; i++)
         {

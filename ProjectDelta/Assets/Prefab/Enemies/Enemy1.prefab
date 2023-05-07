@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7725487482586933040}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: EnemyFirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,13 +43,15 @@ GameObject:
   - component: {fileID: 6044507368546972616}
   - component: {fileID: 6044507368546972599}
   - component: {fileID: 6044507368546972598}
+  - component: {fileID: -2369083508379568067}
   - component: {fileID: 6044507368546972597}
   - component: {fileID: 6044507368546972596}
+  - component: {fileID: 5088804659307317969}
   - component: {fileID: 1091691246557437869}
   - component: {fileID: 5831442353965571104}
   - component: {fileID: 8600635262635657488}
   - component: {fileID: 6195527601937044009}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Enemy1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -171,6 +173,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.2658572, y: 2.4594588}
   m_EdgeRadius: 0
+--- !u!95 &-2369083508379568067
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6044507368546972595}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: df7503591bc75cc4080e66cb72c590da, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &6044507368546972597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,6 +223,19 @@ MonoBehaviour:
   avoidanceDistance: 3
   desiredDistance: 10
   repulsionForce: 10
+--- !u!114 &5088804659307317969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6044507368546972595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13efb279fa03a6645b11bba76652b9b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 6044507368546972597}
 --- !u!114 &1091691246557437869
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -26,7 +26,7 @@ public class EnemyShooting : MonoBehaviour
             if (CanShoot())
             {
                 enemyShoot();
-                Debug.Log("ENEMY SHOT");
+          //      Debug.Log("ENEMY SHOT");
             }
             
             shotInterval = startInterval;

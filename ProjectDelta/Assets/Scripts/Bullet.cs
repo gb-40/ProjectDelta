@@ -26,13 +26,13 @@ public class Bullet : MonoBehaviour
                 if(gameObject.tag == "pulseShot")
                 {
                     healthComponent.takeDamage(3);
-                    Debug.Log("pulse hit");
+                    //Debug.Log("pulse hit");
                     Destroy(gameObject);
                 }
                 else
                 {
                     healthComponent.takeDamage(1);
-                    Debug.Log("hit");
+                    //Debug.Log("hit");
                     Destroy(gameObject);
                 }
             }
