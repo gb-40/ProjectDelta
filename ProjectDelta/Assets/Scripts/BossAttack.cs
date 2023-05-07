@@ -13,6 +13,7 @@ public class BossAttack : MonoBehaviour
     public float projectileSpeed = 10f; // Speed at which the projectiles move
 
     private float attackTimer; // Timer for alternating between attacks
+    private float basicAttackTimer; // Timer for basic attack interval
     private float spiralShotTimer; // Timer for spiral shot interval
     private bool isBasicAttack; // Flag indicating whether it's a basic attack
 
@@ -20,6 +21,7 @@ public class BossAttack : MonoBehaviour
     void Start()
     {
         attackTimer = 0f;
+        basicAttackTimer = basicAttackInterval; // Start with initial basic attack interval
         spiralShotTimer = 0f;
         isBasicAttack = true;
     }
@@ -50,7 +52,9 @@ public class BossAttack : MonoBehaviour
     // Perform the basic attack by shooting projectiles in 8 directions
     void PerformBasicAttack()
     {
-        if (Time.time >= basicAttackInterval)
+        basicAttackTimer += Time.deltaTime;
+
+        if (basicAttackTimer >= basicAttackInterval)
         {
             for (int i = 0; i < 8; i++)
             {
@@ -60,7 +64,7 @@ public class BossAttack : MonoBehaviour
                 projectile.GetComponent<Rigidbody2D>().velocity = projectile.transform.up * projectileSpeed;
             }
 
-            basicAttackInterval += 0.5f;
+            basicAttackTimer = 0f; // Reset the basic attack timer
         }
     }
 
@@ -73,7 +77,7 @@ public class BossAttack : MonoBehaviour
             GameObject projectile = Instantiate(spiralProjectilePrefab, bossFirePoint.position, rotation);
             projectile.GetComponent<Rigidbody2D>().velocity = projectile.transform.up * projectileSpeed;
 
-            spiralShotTimer = 0f;
+            spiralShotTimer = 0f; // Reset the spiral shot timer
         }
     }
 }

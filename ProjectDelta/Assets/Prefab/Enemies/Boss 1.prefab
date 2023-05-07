@@ -184,7 +184,7 @@ MonoBehaviour:
   basicAttackInterval: 0.5
   spiralShotInterval: 0.08
   spiralShotRotationSpeed: 180
-  projectileSpeed: 20
+  projectileSpeed: 15
 --- !u!1 &3213312499180394208
 GameObject:
   m_ObjectHideFlags: 0
