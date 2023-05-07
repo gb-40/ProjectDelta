@@ -44,7 +44,6 @@ TagManager:
   - 
   - 
   - 
-  - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0
@@ -54,4 +53,7 @@ TagManager:
     locked: 0
   - name: Boss
     uniqueID: 1744116017
+    locked: 0
+  - name: UI
+    uniqueID: 4176417531
     locked: 0

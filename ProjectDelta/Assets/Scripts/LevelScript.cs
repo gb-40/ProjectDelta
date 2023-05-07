@@ -91,6 +91,11 @@ public class LevelScript : MonoBehaviour
         currentTime += amount;
         UpdateTimerText();
     }
+    public void SubtractTime(float amount)
+    {
+        currentTime -= amount;
+        UpdateTimerText();
+    }
 }
 
 /*
