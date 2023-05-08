@@ -156,6 +156,7 @@ MonoBehaviour:
   radius: 5
   numExplosions: 10
   explosionDuration: 2
+  WinMSG: Thanks For Playing
 --- !u!114 &633506891216041298
 MonoBehaviour:
   m_ObjectHideFlags: 0

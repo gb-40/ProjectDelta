@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 [System.Serializable]
 public class Enemy
@@ -103,6 +104,8 @@ public class EnemySpawner : MonoBehaviour
         }
 
         spawnCount++;
+        //add wave text
+        
 
         if (spawnCount > 4)
         {

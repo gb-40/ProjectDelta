@@ -41,6 +41,6 @@ void Start()
         Instantiate(enemyExplosion,transform.position,Quaternion.identity);
         
         Destroy(gameObject);
-        levelScript.AddTime(5f);
+        levelScript.AddTime(2f);
     }
 }
