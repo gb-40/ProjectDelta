@@ -152,6 +152,10 @@ MonoBehaviour:
   moveSpeed: 8
   minMoveDuration: 1
   maxMoveDuration: 5
+  explosionPrefab: {fileID: 8307572697076201809, guid: e7453fa009e7e7641b9d09f479d908bc, type: 3}
+  radius: 5
+  numExplosions: 10
+  explosionDuration: 2
 --- !u!114 &633506891216041298
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,14 +12,24 @@ public class BossScript : MonoBehaviour
     public float minMoveDuration = 1f;
     public float maxMoveDuration = 3f;
 
+    public GameObject explosionPrefab;
+    public float radius = 4f;
+    public int numExplosions = 4;
+    public float explosionDuration = 4f;
+
+    private Health health;
+     
+
 
     private void Start()
     {
         GenerateRandomMovement();
+      health = GetComponent<Health>();
     }
 
     private void Update()
     {
+        
         if (currentTimer >= currentMovementTime)
         {
             GenerateRandomMovement();
@@ -28,6 +38,10 @@ public class BossScript : MonoBehaviour
         {
             currentTimer += Time.deltaTime;
             MoveBoss();
+        }
+        if (health.currentHealth <= 0)
+        {
+            Death();
         }
     }
 
@@ -50,5 +64,22 @@ public class BossScript : MonoBehaviour
             Vector2 collisionNormal = collision.GetContact(0).normal;
             currentDirection = Vector2.Reflect(currentDirection, collisionNormal).normalized;
         }
+    }
+
+    private void Death()
+    {
+         for (int i = 0; i < numExplosions; i++)
+        {
+            // Generate a random position within the radius
+            Vector3 position = Random.insideUnitSphere * radius;
+            position += transform.position;
+
+            // Instantiate the explosion prefab at the random position
+            GameObject explosion = Instantiate(explosionPrefab, position, Quaternion.identity);
+
+            // Destroy the explosion after the specified duration
+            Destroy(explosion, explosionDuration);
+        }
+        Destroy(gameObject);
     }
 }
