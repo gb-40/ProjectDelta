@@ -38,10 +38,14 @@ void Start()
      void Death()
     {
         Instantiate(enemyExplosion,transform.position,Quaternion.identity);
+        
         Destroy(gameObject);
-
         levelScript.AddTime(5f);
     }
+
+  
+   
+   
 
      
 

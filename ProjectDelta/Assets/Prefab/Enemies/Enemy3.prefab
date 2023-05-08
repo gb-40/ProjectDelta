@@ -316,3 +316,4 @@ MonoBehaviour:
   bulletForce: 20
   startInterval: 1
   shotInterval: 1
+  enemyShotfx: {fileID: 1703929642226328158, guid: d28ca61dd041b7e4db5da24be67e3d4a, type: 3}

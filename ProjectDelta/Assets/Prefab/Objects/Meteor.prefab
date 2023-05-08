@@ -222,8 +222,8 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 100
-  m_LinearDrag: 0
+  m_Mass: 800
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 66c9f24cf018602438c87aedcfdf7c1f, type: 2}
@@ -245,6 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 45
   speedX: 3
+  metorDamage: 2
   smoke: {fileID: 1937744726238173524, guid: 52b0b4cf24b61ff49928849a85cdc34d, type: 3}
 --- !u!114 &-4329035916517678779
 MonoBehaviour:
