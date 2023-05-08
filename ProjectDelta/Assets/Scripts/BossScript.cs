@@ -17,14 +17,18 @@ public class BossScript : MonoBehaviour
     public int numExplosions = 4;
     public float explosionDuration = 4f;
 
+    private LevelScript levelScript;
+
     private Health health;
-     
+
+    public string WinMSG = "Win";   
 
 
     private void Start()
     {
         GenerateRandomMovement();
-      health = GetComponent<Health>();
+        health = GetComponent<Health>();
+        levelScript = GameObject.FindObjectOfType<LevelScript>();
     }
 
     private void Update()
@@ -42,6 +46,7 @@ public class BossScript : MonoBehaviour
         if (health.currentHealth <= 0)
         {
             Death();
+            levelScript.EndGame(WinMSG);
         }
     }
 
