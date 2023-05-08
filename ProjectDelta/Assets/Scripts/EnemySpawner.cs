@@ -44,7 +44,7 @@ public class EnemySpawner : MonoBehaviour
     }
 
     private void sendWaveCount(){
-        if(spawnCount == 5){
+        if(spawnCount == 4){
             levelScript.BossWave(); 
         } else{
             levelScript.WaveCounter(spawnCount + 1); 
