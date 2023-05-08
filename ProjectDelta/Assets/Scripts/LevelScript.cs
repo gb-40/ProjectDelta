@@ -17,6 +17,7 @@ public class LevelScript : MonoBehaviour
     private bool isPaused = false;
     public Button MenuButton;
     public Image TimeBarFill; 
+    public GameObject healthBar; 
 
     // Start is called before the first frame update
     void Start()
@@ -98,6 +99,11 @@ public class LevelScript : MonoBehaviour
     {
         currentTime -= amount;
         UpdateTimerText();
+    }
+
+    public void DisplayBossHealth()
+    {
+        healthBar.SetActive(true);
     }
 }
 
