@@ -19,6 +19,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private Enemy[] enemies;
     public int enemyCount;
+    private LevelScript levelScript;
 
     private double accumulatedWeights;
     private System.Random rand = new System.Random();
@@ -38,6 +39,17 @@ public class EnemySpawner : MonoBehaviour
         {
             SpawnRandomEnemy();
         }
+        levelScript = GameObject.FindObjectOfType<LevelScript>();
+        sendWaveCount();
+    }
+
+    private void sendWaveCount(){
+        if(spawnCount == 5){
+            levelScript.BossWave(); 
+        } else{
+            levelScript.WaveCounter(spawnCount + 1); 
+        }
+        
     }
 
     private void SpawnRandomEnemy()
@@ -103,9 +115,10 @@ public class EnemySpawner : MonoBehaviour
             CalculateWeights();
         }
 
+        sendWaveCount();
         spawnCount++;
         //add wave text
-        
+               
 
         if (spawnCount > 4)
         {

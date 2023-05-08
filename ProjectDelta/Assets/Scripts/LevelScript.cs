@@ -13,6 +13,7 @@ public class LevelScript : MonoBehaviour
     public TMP_Text textMesh;
     public GameObject endGamePopup;
     public TMP_Text endGameText; // Reference to the EndGameText TMP_Text component
+    public TMP_Text waveText;
     public float currentTime;
     private bool isPaused = false;
     public Button MenuButton;
@@ -75,6 +76,15 @@ public class LevelScript : MonoBehaviour
 
         endGamePopup.SetActive(true);
         Time.timeScale = 0f; // Pause the scene
+    }
+
+    public void WaveCounter(int waveCount)
+    {
+        waveText.text = "Wave: " + waveCount; 
+    }
+    public void BossWave()
+    {
+        waveText.text = "Wave: Boss"; 
     }
 
     void TogglePause()
