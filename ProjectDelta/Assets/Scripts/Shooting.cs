@@ -9,9 +9,10 @@ public class Shooting : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject pulseShotPrefab;
     public float bulletForce = 20f;
-
     public bool canTripleShot = false;
     public bool canPulseShot = false;
+    public GameObject singleShotfx;
+    public GameObject pulseShotfx;
 
     IEnumerator PowerupDuration(bool powerup, float duration)
     {
@@ -55,6 +56,10 @@ public class Shooting : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+
+        //play singleShot
+        Instantiate(singleShotfx,transform.position,Quaternion.identity);
+
     }
 
     void tripleShot()
@@ -64,6 +69,8 @@ public class Shooting : MonoBehaviour
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation * Quaternion.Euler(0f, 0f, i * 15f));
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>(); // get existing rigidbody component
             rb.AddForce(bullet.transform.up * bulletForce, ForceMode2D.Impulse);
+            Instantiate(singleShotfx,transform.position,Quaternion.identity);
+           
         }
     }
 
@@ -72,6 +79,7 @@ public class Shooting : MonoBehaviour
         GameObject pulseShot = Instantiate(pulseShotPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = pulseShot.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+      Instantiate(pulseShotfx,transform.position,Quaternion.identity);
     }
 
     void OnTriggerEnter2D(Collider2D collision) 

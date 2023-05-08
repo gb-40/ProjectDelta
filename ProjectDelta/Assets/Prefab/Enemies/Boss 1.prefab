@@ -185,6 +185,8 @@ MonoBehaviour:
   spiralShotInterval: 0.08
   spiralShotRotationSpeed: 180
   projectileSpeed: 15
+  bossAttack1fx: {fileID: 172439895782242599, guid: 758c75008cd7c7f4394fb81de1a30c50, type: 3}
+  bossAttack1fx2: {fileID: 4085774472494299978, guid: 7b44aada08fee7c44a6f19189c53a5c2, type: 3}
 --- !u!1 &3213312499180394208
 GameObject:
   m_ObjectHideFlags: 0

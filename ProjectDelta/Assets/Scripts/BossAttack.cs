@@ -12,6 +12,9 @@ public class BossAttack : MonoBehaviour
     public float spiralShotRotationSpeed = 180f; // Speed at which spiral shot rotates (in degrees per second)
     public float projectileSpeed = 10f; // Speed at which the projectiles move
 
+    public GameObject bossAttack1fx;
+    public GameObject bossAttack1fx2;
+
     private float attackTimer; // Timer for alternating between attacks
     private float basicAttackTimer; // Timer for basic attack interval
     private float spiralShotTimer; // Timer for spiral shot interval
@@ -53,6 +56,7 @@ public class BossAttack : MonoBehaviour
     void PerformBasicAttack()
     {
         basicAttackTimer += Time.deltaTime;
+        //Instantiate(bossAttack1fx, gameObject.transform.position,Quaternion.identity);
 
         if (basicAttackTimer >= basicAttackInterval)
         {
@@ -62,6 +66,7 @@ public class BossAttack : MonoBehaviour
                 Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
                 GameObject projectile = Instantiate(basicProjectilePrefab, bossFirePoint.position, rotation);
                 projectile.GetComponent<Rigidbody2D>().velocity = projectile.transform.up * projectileSpeed;
+                
             }
 
             basicAttackTimer = 0f; // Reset the basic attack timer
@@ -71,10 +76,13 @@ public class BossAttack : MonoBehaviour
     // Perform the spiral shot by shooting projectiles in a rotating pattern
     void PerformSpiralShot()
     {
+     //   Instantiate(bossAttack1fx2, gameObject.transform.position,Quaternion.identity);
         if (spiralShotTimer >= spiralShotInterval)
         {
             Quaternion rotation = Quaternion.Euler(0f, 0f, spiralShotRotationSpeed * Time.time);
             GameObject projectile = Instantiate(spiralProjectilePrefab, bossFirePoint.position, rotation);
+           
+            
             projectile.GetComponent<Rigidbody2D>().velocity = projectile.transform.up * projectileSpeed;
 
             spiralShotTimer = 0f; // Reset the spiral shot timer
