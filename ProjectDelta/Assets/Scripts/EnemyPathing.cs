@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class EnemyPathing : MonoBehaviour
 {
@@ -48,6 +49,17 @@ public class EnemyPathing : MonoBehaviour
                         Vector2 repulsionVector = (transform.position - collider.transform.position).normalized;
                         moveDirection += repulsionVector * repulsionForce;
                     }
+                }
+            }
+
+            // Avoid colliding with walls
+            Collider2D[] wallColliders = Physics2D.OverlapCircleAll(transform.position, avoidanceDistance);
+            foreach (Collider2D wallCollider in wallColliders)
+            {
+                if (wallCollider != null && wallCollider.CompareTag("walls"))
+                {
+                    Vector2 avoidDirection = (transform.position - wallCollider.transform.position).normalized;
+                    moveDirection += avoidDirection;
                 }
             }
 
