@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class forEnemy : MonoBehaviour
 {
-    private Health health;
+     private LevelScript levelScript;
    // private int maxHealth = 100;  
 
     private Rigidbody2D rb; 
    
-    private LevelScript levelScript;
+   
     public GameObject enemyExplosion; 
+      private Health health;
     
 
 
