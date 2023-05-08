@@ -6,11 +6,13 @@ public class Bullet : MonoBehaviour
 {
     public GameObject explosion;
     private LevelScript levelScript;
+    private Animator anim;
+    private GameObject cam; 
      public int BossBasicDMG = 4, BossSpiralDMG = 2, PulseShotDMG = 3, BasicDMG = 1; 
 
     private void Start()
     {
-        
+        cam = GameObject.FindGameObjectWithTag("MainCamera");
     }
     private void OnBecameInvisible()
     {
@@ -59,17 +61,27 @@ public class Bullet : MonoBehaviour
 
         if(collision.gameObject.tag == "Player")
         {
+           Animator anim = collision.gameObject.GetComponent<Animator>();
+           Animator camAnim = cam.GetComponent<Animator>();
+           
+
             levelScript = GameObject.FindObjectOfType<LevelScript>();
             if(levelScript != null) 
             {
             if(gameObject.name.Contains("BossBasicBullet"))
                 {
                     levelScript.SubtractTime(BossBasicDMG);
+                    anim.SetTrigger("playerHurt");
+                   
+    
+
                     
                 }
                 else if(gameObject.name.Contains("BossSpiralBullet"))
                 {
                    levelScript.SubtractTime(BossSpiralDMG);
+                   anim.SetTrigger("playerHurt");
+                  
                 }
 
                 else if(gameObject.tag == "pulseShot")
@@ -77,12 +89,16 @@ public class Bullet : MonoBehaviour
                    //  levelScript.SubtractTime(PulseShotDMG);
                    levelScript.SubtractTime(PulseShotDMG);
                     // Debug.Log("pulse hit");
+                    anim.SetTrigger("playerHurt");
+                    
                 }
                 else
                 {
                   levelScript.SubtractTime(BasicDMG);
                    // levelScript.SubtractTime(BasicDMG);
                     // Debug.Log("hit");
+                    anim.SetTrigger("playerHurt");
+                   
                 }
             }
         }
