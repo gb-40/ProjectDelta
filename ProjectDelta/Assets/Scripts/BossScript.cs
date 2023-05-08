@@ -28,7 +28,15 @@ public class BossScript : MonoBehaviour
     {
         GenerateRandomMovement();
         health = GetComponent<Health>();
-        levelScript = GameObject.FindObjectOfType<LevelScript>();
+
+      levelScript = GameObject.FindObjectOfType<LevelScript>();
+      levelScript.DisplayBossHealth();
+
+      
+
+      
+     
+
     }
 
     private void Update()
@@ -43,6 +51,7 @@ public class BossScript : MonoBehaviour
             currentTimer += Time.deltaTime;
             MoveBoss();
         }
+        
         if (health.currentHealth <= 0)
         {
             Death();
