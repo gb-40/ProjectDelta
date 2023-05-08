@@ -29,13 +29,6 @@ public class playerMovement : MonoBehaviour
 
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
          
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-
-        Vector2 lookDirection = mousePos - rb.position;
-
-        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
-
-        rb.rotation = angle;
      
 
         // ================================================================== //
@@ -59,16 +52,16 @@ public class playerMovement : MonoBehaviour
         // rb.velocity = movement.normalized * moveSpeed * Time.deltaTime * 200f; 
     }
 
-    // void FixedUpdate() 
-    // {
-    //     // rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+    void FixedUpdate() 
+    {
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
-    //     // Vector2 lookDirection = mousePos - rb.position;
+        Vector2 lookDirection = mousePos - rb.position;
 
-    //     // float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
+        float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
 
-    //     // rb.rotation = angle;
-    // }
+        rb.rotation = angle;
+    }
 
     private void Awake()
     {
