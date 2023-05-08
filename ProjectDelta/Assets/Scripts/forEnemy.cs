@@ -42,11 +42,4 @@ void Start()
 
         levelScript.AddTime(5f);
     }
-
-     
-
-
-
-
-
 }
