@@ -42,15 +42,4 @@ void Start()
         Destroy(gameObject);
         levelScript.AddTime(5f);
     }
-
-  
-   
-   
-
-     
-
-
-
-
-
 }

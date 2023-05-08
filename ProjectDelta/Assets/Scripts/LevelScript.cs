@@ -10,9 +10,10 @@ public class LevelScript : MonoBehaviour
 {
     public float startTime = 20f;
     public float maxTime = 100f; 
-     public TMP_Text textMesh;
-    public GameObject timesUpPopup;
-    private float currentTime;
+    public TMP_Text textMesh;
+    public GameObject endGamePopup;
+    public TMP_Text endGameText; // Reference to the EndGameText TMP_Text component
+    public float currentTime;
     private bool isPaused = false;
     public Button MenuButton;
     public Image TimeBarFill; 
@@ -20,7 +21,6 @@ public class LevelScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         currentTime = startTime;
         UpdateTimerText();
         StartCoroutine(StartTimer());
@@ -31,9 +31,9 @@ public class LevelScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentTime > maxTime)
+        if (currentTime > maxTime)
         {
-        currentTime = maxTime;
+            currentTime = maxTime;
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -46,7 +46,7 @@ public class LevelScript : MonoBehaviour
     {
         while (currentTime > 0)
         {
-            TimeBarFill.fillAmount = currentTime/100f;
+            TimeBarFill.fillAmount = currentTime / 100f;
             if (!isPaused)
             {
                 currentTime -= Time.deltaTime;
@@ -55,21 +55,24 @@ public class LevelScript : MonoBehaviour
             yield return null;
         }
 
-        TimeUp();
+        yield return new WaitForSeconds(2f);
+
+        EndGame("Out of Fuel"); 
     }
 
     void UpdateTimerText()
     {
-        
-        if (textMesh != null) 
+        if (textMesh != null)
         {
-        textMesh.text = Mathf.CeilToInt(currentTime).ToString();
+            textMesh.text = Mathf.CeilToInt(currentTime).ToString();
         }
     }
 
-    void TimeUp()
+    public void EndGame(string endGameReason)
     {
-        timesUpPopup.SetActive(true);
+        endGameText.text = endGameReason; // Set the EndGameText based on the endGameReason
+
+        endGamePopup.SetActive(true);
         Time.timeScale = 0f; // Pause the scene
     }
 
@@ -80,17 +83,17 @@ public class LevelScript : MonoBehaviour
     }
 
     public void GoToMenu()
-   {
-        isPaused = false; 
-        SceneManager.LoadScene(0); 
-       
-   }
+    {
+        isPaused = false;
+        SceneManager.LoadScene(0);
+    }
 
-   public void AddTime(float amount)
+    public void AddTime(float amount)
     {
         currentTime += amount;
         UpdateTimerText();
     }
+
     public void SubtractTime(float amount)
     {
         currentTime -= amount;
@@ -98,18 +101,3 @@ public class LevelScript : MonoBehaviour
     }
 }
 
-/*
-    ADD AT THE TOP
-    private LevelScript levelScript;
-
-    private void Start()
-    {
-        levelScript = GameObject.FindObjectOfType<LevelScript>();
-    }
-
-    private void OnDestroy()
-    {
-        levelScript.AddTime(10f);
-    }
-
-*/
