@@ -2677,9 +2677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7723f7a69d1d784eae4e3578417a4ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  cam: {fileID: 519420031}
-  mousePos: {x: 0, y: 0}
+  moveSpeed: 800
 --- !u!4 &1519149144
 Transform:
   m_ObjectHideFlags: 0
